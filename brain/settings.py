@@ -95,9 +95,12 @@ WSGI_APPLICATION = 'brain.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://USER:PASSWORD@HOST:PORT/DBNAME'
+        # default='postgres://USER:PASSWORD@HOST:PORT/DBNAME'
+        default='postgres://USER:PASSWORD@localhost:5432/DBNAME',
+
     )
 }
+
 
 # DATABASES = {
 #     'default': {
