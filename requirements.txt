@@ -8,11 +8,14 @@ gunicorn==23.0.0
 mysqlclient==2.2.6
 packaging==24.2
 pillow==11.0.0
+portalocker==3.0.0
 psycopg2==2.9.10
 pytz==2024.2
+pywin32==308
 setuptools==75.6.0
 sqlparse==0.5.3
 typing_extensions==4.12.2
 tzdata==2024.2
 webencodings==0.5.1
 whitenoise==6.8.2
+portalocker
