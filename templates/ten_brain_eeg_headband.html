@@ -1,12 +1,451 @@
 {% extends 'base.html' %}
 {% block 'main' %}
 {% load static %}
+<style>
+  /*start Article.css*/
+  .ootb-tabcordion {
+    background: #000;
+    color: #fff;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+    /* max-width: 680px; */
+    padding: 1rem;
+    margin: 1rem auto 4rem auto;
+    border-radius: 3px;
+  }
+  .ootb-tabcordion.has-tabs .ootb-tabcordion--tabs {
+    opacity: 1;
+    height: auto;
+    visibility: visible;
+  }
+  .ootb-tabcordion.has-tabs .ootb-tabcordion--entry {
+    min-height: 0;
+  }
+  .ootb-tabcordion.has-tabs .ootb-tabcordion--entry::before {
+    display: none;
+  }
+  .ootb-tabcordion.has-tabs .ootb-tabcordion--entry.is-active .ootb-tabcordion--entry-content {
+    opacity: 1;
+    transition: opacity 400ms ease-in-out;
+  }
+  .ootb-tabcordion.has-tabs .ootb-tabcordion--entry .ootb-tabcordion--entry-content {
+    opacity: 0;
+    transition: opacity 400ms ease-in-out;
+    border-top: none;
+  }
+  
+  .ootb-tabcordion--tabs {
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+    display: flex;
+    flex-flow: wrap;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+  }
+  .ootb-tabcordion--tabs .tab {
+    display: block;
+    background: #000;
+    color: #fff;
+    padding: 30px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: "Roboto", sans-serif;
+    margin: 0 0 1px 0;
+    border: none;
+    border: 1px solid #fff;
+    cursor: pointer;
+    padding-right: 10%;
+    padding-left: 90px;
+
+  }
+  .ootb-tabcordion--tabs .tab:hover, .ootb-tabcordion--tabs .tab:focus {
+    background: #000;
+    outline: none;
+    color: orange;
+  }
+  .ootb-tabcordion--tabs .tab.is-active {
+    /* background: #3bacff; */
+    background: #000;
+    border: orange solid;
+    padding: 30px;
+    padding-right: 10%;
+    padding-left: 50px;
+    border-bottom: none;
+  }
+  .ootb-tabcordion--tabs .tab.is-active:hover, .ootb-tabcordion--tabs .tab.is-active:focus {
+    background: #000;
+    color: orange;
+    border-bottom: none;
+  }
+  
+  .ootb-tabcordion--entry {
+    overflow: hidden;
+  }
+  .ootb-tabcordion--entry::before {
+    position: relative;
+    content: attr(data-title);
+    cursor: pointer;
+    z-index: 1;
+    background: #444;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    display: block;
+    border-radius: 3px;
+  }
+  .ootb-tabcordion--entry:hover, .ootb-tabcordion--entry:focus {
+    outline: none;
+  }
+  .ootb-tabcordion--entry:hover::before, .ootb-tabcordion--entry:focus::before {
+    background: #535353;
+  }
+  .ootb-tabcordion--entry.is-active .ootb-tabcordion--entry-content {
+    margin-top: 0;
+    height: auto;
+    opacity: 1;
+    transition: margin 400ms ease-out -100ms;
+    border: 2px orange solid;
+    border-top: none;
+  }
+  .ootb-tabcordion--entry.is-active::before {
+    background: #3bacff;
+  }
+  .ootb-tabcordion--entry.is-active:hover::before, .ootb-tabcordion--entry.is-active:focus::before {
+    background: #1c9fff;
+  }
+  
+  .ootb-tabcordion--entry-container {
+    overflow: hidden;
+    margin-bottom: 1px;
+  }
+  
+  .ootb-tabcordion--entry-content {
+    position: relative;
+    margin-top: -100%;
+    height: 0;
+    opacity: 0;
+    transition: margin 500ms ease-in;
+    padding: 1rem;
+  }
+  .ootb-tabcordion--entry-content a.more {
+    color: #444;
+  }
+  .ootb-tabcordion--entry-content a.more:hover {
+    color: #3bacff;
+  }
+  p {
+    margin-top: 0;
+    line-height: 1.6;
+  }
+
+  /*end article.css*/
+
+  /* start slider.css*/
+  @-webkit-keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+.slider {
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 125px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  /* width: 960px; */
+}
+.slider::before, .slider::after {
+  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.slider::before {
+  left: 0;
+  top: 0;
+}
+.slider .slide-track {
+  -webkit-animation: scroll 40s linear infinite;
+          animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+}
+.slider .slide {
+  height: 100px;
+  width: 250px;
+}
+  /* end slider.css*/
+
+  /* start style.css*/
+  .training-research {
+  border-radius: 65px;
+    background-color: black;
+    color: white;
+    margin-top: 4%;
+    border: 2px #fff solid;
+    height: 100%;
+    /* font-size: 24px;*/
+}
+.card-design-first{
+   width: 23rem;  
+  /*margin-right: 40px;*/
+  border-radius: 50px;
+  border: 2px white solid;
+ 
+}
+.card-design-card{
+  background-color: black;
+  color: white;
+  margin-bottom: 15px;
+  /* height: 284px; 
+  margin-top: 13px;
+  margin-bottom: 19px;*/
+}
+.card img{
+  margin-top: 20px;
+}
+.card-design-second{
+  width: 23rem; 
+  margin-top: 20px;
+  margin-right: 40px;
+  border-radius: 50px;
+  border: 2px white solid;
+  background-color: #000;
+  color: #fff;
+}
+.youtube-video{
+  width:"1280";
+  height:"675"
+}
+
+.mySlides {
+  display: none;
+}
+
+/* Slideshow container */
+.slideshow-container {
+max-width: 100%;
+position: relative;
+margin: auto;
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+height: 15px;
+width: 15px;
+margin: 0 2px;
+background-color: #fff;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+
+.active {
+background-color: #00aeff;
+}
+
+/* Fading animation */
+.fade {
+animation-name: fade;
+animation-duration: 1.5s;
+}
+
+@keyframes fade {
+from {opacity: .4} 
+to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+
+.text {font-size: 11px}
+}
+
+.text-form{
+  border-radius: 25px;
+  height: 60px;
+}
+.label-text{
+  font-weight: bolder;
+  font-size: larger;
+}
+.submit-btn {
+  width: 100%; 
+  border-radius: 25px; 
+  color: #fff;
+  font-weight: bold;
+  height: 60px;
+  font-size: larger;
+}
+.wrapper{
+  padding: 70px 0;
+  overflow-x: hidden;
+}
+
+
+.my-slider{
+  padding: 0 70px;
+}
+.slick-initialized .slick-slide{
+  background-color: #111;
+  color: #FFF;
+  height: 200px;
+  margin: 0 15px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.slick-next, .slick-prev{
+  z-index: 5;
+}
+.slick-next{
+  right: 15px;
+}
+.slick-prev{
+  left: 15px;
+}
+.slick-next:before, .slick-prev:before{
+  color: #000;
+  font-size: 26px;
+}
+.card-related-products{
+  /* width: 0rem; */
+  width: 20px; 
+  height: 100%; 
+  /* background-color: #111;  */
+  border-radius: 10%;
+  color: #fff;;
+}
+
+#default{
+  text-align:center;
+}
+
+
+
+@media screen and (max-width:991px) {
+  .card-design-first{
+    margin-top: 25px;
+  }
+}
+@media screen and (min-width:992px) {
+  
+  .card-design-first{
+    margin-top: 25px;
+  }
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1800px) { 
+  .get-in{
+    
+    margin-top: 30px;
+    /* text-align: center; */
+    margin-left: 162px;
+
+  }
+}
+
+@media (max-width: 768px) {
+
+.slick-initialized .slick-slide{
+  background-color: #111;
+  color: #FFF;
+  height: 200px;
+  margin: 0 15px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.feedback-text{
+  margin-left: 15px;
+  /* margin-right: 2px; */
+}
+.training-main{
+  margin-top: 7%;
+}
+.get-in-touch-img{
+  width: 100%;
+}
+
+.card-design-first{
+  margin-top: 25px;
+}
+
+.card-design-second{
+  margin-left: 30px;
+  margin-top: 25px;
+  margin-right: 9%;
+}
+.training-research{
+  margin-left: 21px;
+  /* margin-top: 25px; */
+  margin-right: 6%;
+}
+
+.slick-list{
+  margin-left: -28px !important;
+  margin-right: -32px !important;
+}
+
+.xzoom-container{
+  margin-left: 2% !important;
+  /* box-sizing: none !important; */
+}
+.product-information-img{
+  width: 90%;
+}
+
+iframe{
+  width: 100%;
+}
+.product-row{
+  width: 100%;
+  margin-left: 1px;
+}
+
+
+}
+  /* end style.css*/
+
+
+
+
+</style>
 <!--main start-->
     <!--Banner start-->
     <div class="bg-black text-white">
         <div class="row">
             <div class="col-sm-12">
-                <img src="{% static 'assets/eeg-images/headbandbanners.png' %}" width="100%">
+                <img src="https://www.neuphony.com/img/product-neuphony-eeg-headband/headbandbanner1.webp" width="100%">
             </div>
         </div>
         <!--feedback therapy start-->
@@ -23,7 +462,7 @@
                     <div class="col-sm-6">
                         <div class="row">
                             <div class="col-sm-2 ms-3" style="margin-right: 25px;">
-                                <img src="{% static 'assets/eeg-images/step1.webp' %}" height="100">
+                                <img src="https://www.neuphony.com/img/product-neuphony-eeg-headband/Activity.webp" height="100">
                             </div>
                             <div class="col-sm-8 ms-3 me=3">
                                 <h5>Step 1: Measure Your Brain Activity</h5>
@@ -32,7 +471,7 @@
                         </div>
                         <div class="row mt-5">
                             <div class="col-sm-2 ms-3" style="margin-right: 25px;">
-                                <img src="{% static 'assets/eeg-images/step2.webp' %}" height="100">
+                                <img src="https://www.neuphony.com/img/product-neuphony-eeg-headband/therapy.webp" height="100">
                             </div>
                             <div class="col-sm-8 ms-3">
                                 <h5>Step 2: Neurofeedback therapy</h5>
@@ -41,7 +480,7 @@
                         </div>
                         <div class="row mt-5">
                             <div class="col-sm-2 ms-3" style="margin-right: 25px;">
-                                <img src="{% static 'assets/eeg-images/step3.webp' %} " height="100">
+                                <img src="https://www.neuphony.com/img/product-neuphony-eeg-headband/Improve.webp " height="100">
                             </div>
                             <div class="col-sm-8 ms-3">
                                 <h5>Step 3: Track and Improve</h5>
@@ -73,18 +512,18 @@
                             <!-- <hr> -->
                           <div class="large-5 column">
                             <div class="xzoom-container">
-                              <img class="xzoom product-information-img" id="xzoom-default" src="{% static 'assets/eeg-images/headband/headband1.webp' %}" xoriginal="{% static 'assets/eeg-images/headband/headband1.webp' %}" />
+                              <img class="xzoom product-information-img" id="xzoom-default" src="https://www.neuphony.com/img/product-neuphony-eeg-headband/headband1.webp" xoriginal="https://www.neuphony.com/img/product-neuphony-eeg-headband/headband1.webp" />
                               <div class="xzoom-thumbs">
-                                <a href="{% static 'assets/eeg-images/headband/headband1.webp' %}">
-                                  <img class="xzoom-gallery" width="80" src="{% static 'assets/eeg-images/headband/headband1.webp' %}"  xpreview="{% static 'assets/eeg-images/headband/headband2.webp' %}" title="The description goes here">
+                                <a href="https://www.neuphony.com/img/product-neuphony-eeg-headband/headband1.webp">
+                                  <img class="xzoom-gallery" width="80" src="https://www.neuphony.com/img/product-neuphony-eeg-headband/headband1.webp"  xpreview="https://www.neuphony.com/img/product-neuphony-eeg-headband/headband2.webp" title="The description goes here">
                                 </a>
                                   
-                                <a href="{% static 'assets/eeg-images/headband/headband2.webp' %}">
-                                  <img class="xzoom-gallery" width="80" src="{% static 'assets/eeg-images/headband/headband2.webp' %}" title="The description goes here">
+                                <a href="https://www.neuphony.com/img/product-neuphony-eeg-headband/headband2.webp">
+                                  <img class="xzoom-gallery" width="80" src="https://www.neuphony.com/img/product-neuphony-eeg-headband/headband2.webp" title="The description goes here">
                                 </a>
                                   
-                                <a href="{% static 'assets/eeg-images/headband/headband3.webp' %}">
-                                  <img class="xzoom-gallery" width="80" src="{% static 'assets/eeg-images/headband/headband3.webp' %}" title="The description goes here">
+                                <a href="https://www.neuphony.com/img/product-neuphony-eeg-headband/headband3.webp">
+                                  <img class="xzoom-gallery" width="80" src="https://www.neuphony.com/img/product-neuphony-eeg-headband/headband3.webp" title="The description goes here">
                                 </a>
                                   
                                 
@@ -203,19 +642,19 @@
                                 <p>
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <img src="{% static 'assets/eeg-images/features/feature1.webp' %}" style="width:50px; height:50px; margin-left: 70px;">
+                                            <img src="https://www.neuphony.com/img/product-neuphony-eeg-headband/lobes.webp" style="width:50px; height:50px; margin-left: 70px;">
                                             <p>6 dry EEG sensors covering three Brain lobes</p>
                                         </div>
                                         <div class="col-sm-3">
-                                            <img src="{% static 'assets/eeg-images/features/feature2.webp' %}" alt="Home" class="" style="width:50px; height:50px; margin-left: 70px;">
+                                            <img src="https://www.neuphony.com/img/product-neuphony-eeg-headband/Home.webp" alt="Home" class="" style="width:50px; height:50px; margin-left: 70px;">
                                             <p>Experience Neurofeedback at Home</p>
                                         </div>
                                         <div class="col-sm-3">
-                                            <img src="{% static 'assets/eeg-images/features/feature3.webp' %}" alt="Bluetooth" class="" style="width:50px; height:50px; margin-left: 70px;">
+                                            <img src="https://www.neuphony.com/img/product-neuphony-eeg-headband/Bluetooth.webp" alt="Bluetooth" class="" style="width:50px; height:50px; margin-left: 70px;">
                                             <p>Wireless connectivity via Bluetooth</p>
                                         </div>
                                         <div class="col-sm-3">
-                                            <img src="{% static 'assets/eeg-images/features/feature4.webp' %}" alt="hardware" class="" style="width:50px; height:50px; margin-left: 70px;">
+                                            <img src="https://www.neuphony.com/img/product-neuphony-eeg-headband/hardware.webp" alt="hardware" class="" style="width:50px; height:50px; margin-left: 70px;">
                                             <p>Sleek design and high quality hardware</p>
                                         </div>
                                     </div>
@@ -243,7 +682,7 @@
                               <h5 class="card-title mt-3" style="text-align: center; font-size: x-large;">Ten Brain Research Mobile Application</h5>
                               <p style="text-align: center;"><a href="#" class="btn btn-dark mt-3" style="border-radius: 17px; border: 2px #fff solid;">Explore</a></p>
                               <div class="clearfix"></div>
-                              <p style="text-align: center;"><img src="{% static 'assets/eeg-images/application1.webp' %}" class="mt-4" width="100%"></p> 
+                              <p style="text-align: center;"><img src="https://www.neuphony.com/img/product-neuphony-eeg-headband/Application.webp" class="mt-4" width="100%"></p> 
                             </div>
                         </div>
                     </div>
@@ -253,7 +692,7 @@
                               <h5 class="card-title mt-3" style="text-align: center; font-size: x-large;">Ten Brain Research Desktop Application</h5>
                               <p style="text-align: center;"><a href="#" class="btn btn-dark mt-3" style="border-radius: 17px; border: 2px #fff solid;">Explore</a></p>
                               <div class="clearfix"></div>
-                              <p style="text-align: center; margin-top: 35%;"><img src="{% static 'assets/eeg-images/application2.webp' %}" class="mt-4" width="100%"></p> 
+                              <p style="text-align: center; margin-top: 35%;"><img src="https://www.neuphony.com/img/product-neuphony-eeg-headband/Desktop.webp" class="mt-4" width="100%"></p> 
                             </div>
                         </div>
                     </div>
@@ -332,7 +771,7 @@
                   <!-- <div class="card-deck"> -->
                     <div class="col-sm-4 ms-4 card-design-first" style="width: 31% !important;">
                       <div class="card mt-3 card-design-card">
-                        <img class="card-img-top" src="{% static 'assets/eeg-images/master/1.webp' %}" alt="Card image cap" width="auto" >
+                        <img class="card-img-top" src="https://www.neuphony.com/img/product-neuphony-eeg-headband/focus.webp" alt="Card image cap" width="auto" >
                         <div class="card-body">
                           <h5 class="card-title">Play Brain Training Games</h5>
                           <p class="card-text">Use Ten Brain Research Headband to Monitor your focus, calm and other scores while you play brain training games</p>
@@ -341,7 +780,7 @@
                     </div>
                     <div class="col-sm-4 ms-4 card-design-first" style="width: 31% !important;">
                       <div class="card mt-3 card-design-card">
-                        <img class="card-img-top" src="{% static 'assets/eeg-images/master/performance.webp' %}" alt="Card image cap" width="auto" >
+                        <img class="card-img-top" src="https://www.neuphony.com/img/product-neuphony-eeg-headband/performance.webp" alt="Card image cap" width="auto" >
                         <div class="card-body">
                           <h5 class="card-title">Workout</h5>
                           <p class="card-text">Track your mental strength and performance to train your brain as much as you train your body.</p>
@@ -350,7 +789,7 @@
                     </div>
                     <div class="col-sm-4 ms-4 card-design-first" style="width: 31% !important;">
                       <div class="card mt-3 card-design-card">
-                        <img class="card-img-top" src="{% static 'assets/eeg-images/master/Read.webp' %}" alt="Card image cap" width="auto" >
+                        <img class="card-img-top" src="https://www.neuphony.com/img/product-neuphony-eeg-headband/Read.webp" alt="Card image cap" width="auto" >
                         <div class="card-body">
                           <h5 class="card-title">Read A Book</h5>
                           <p class="card-text">Read a book, novel, blog or any articles to measure your focus, attention span etc. and train your brain for better results every time.</p>
@@ -361,7 +800,7 @@
               <div class="row" style="margin-right: 40px;">   -->
                 <div class="col-sm-4 ms-4 card-design-first" style="width: 31% !important;">
                   <div class="card mt-3 card-design-card">
-                    <img class="card-img-top" src="{% static 'assets/eeg-images/master/techniques.webp' %}" alt="Card image cap" width="auto" >
+                    <img class="card-img-top" src="https://www.neuphony.com/img/product-neuphony-eeg-headband/techniques.webp" alt="Card image cap" width="auto" >
                     <div class="card-body">
                       <h5 class="card-title">Deep Breathing</h5>
                       <p class="card-text">Try deep breathing techniques with Ten Brain Research to measure and keep a track of your brain waves data which helps you define which techniques benefits you more.</p>
@@ -370,7 +809,7 @@
                 </div>
                 <div class="col-sm-4 ms-4 card-design-first" style="width: 31% !important;">
                   <div class="card mt-3 card-design-card">
-                    <img class="card-img-top" src="{% static 'assets/eeg-images/master/brain.webp' %}" alt="Card image cap" width="auto" >
+                    <img class="card-img-top" src="https://www.neuphony.com/img/product-neuphony-eeg-headband/brain.webp" alt="Card image cap" width="auto" >
                     <div class="card-body">
                       <h5 class="card-title">Practice Yoga</h5>
                       <p class="card-text">Do a Pre-Yoga and Post-Yoga analysis or track your real-time brain data while you perform different asanas.</p>
@@ -379,7 +818,7 @@
                 </div>
                 <div class="col-sm-4 ms-4 card-design-first" style="width: 31% !important;">
                   <div class="card mt-3 card-design-card">
-                    <img class="card-img-top" src="{% static 'assets/eeg-images/master/Meditation.webp' %}" alt="Card image cap" width="auto" >
+                    <img class="card-img-top" src="https://www.neuphony.com/img/product-neuphony-eeg-headband/Meditation.webp" alt="Card image cap" width="auto" >
                     <div class="card-body">
                       <h5 class="card-title">Meditate</h5>
                       <p class="card-text">Experience Meditation like never before with Ten Brain Research and track how any meditation impacts your brain states.</p>
@@ -549,7 +988,7 @@
             <div class="col-sm-8">
                 <div class="row">
                   <div class="col-sm-6">
-                    <img src="{% static 'assets/eeg-images/demo.webp' %}" width="600" class="get-in-touch-img">
+                    <img src="https://www.neuphony.com/img/desktop-application/demo.webp" width="600" class="get-in-touch-img">
                   </div>
                   <!-- <div class="clearfix"></div> -->
                   <div class="col-sm-6 get-in">
@@ -599,35 +1038,35 @@
                   <div class="wrapper">
                     <div class="my-slider">
                       <div class="card card-related-products" style="height: 100%; border-radius: 10%; color: #fff;;">
-                        <img class="card-img-top" src="{% static 'assets/eeg-images/relaed products/NeuphonyFlexCap.webp' %}" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
+                        <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyFlexCap.webp" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
                         <div class="card-body">
                           <h4 class="card-title" style="text-align: center;">Ten Brain Research Flex Cap</h4>
                           <p class="card-text" style="text-align: center;">8 – Channel Wireless and Dry EEG Headset. Movable Electrodes and compatible with Ten Brain Research Desktop Application</p>
                         </div>
                       </div>
                       <div class="card card-related-products" style="height: 100%; border-radius: 10%; color: #fff;;">
-                        <img class="card-img-top" src="{% static 'assets/eeg-images/relaed products/NeuphonyEXGSynapse.webp' %}" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
+                        <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyEXGSynapse.webp" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
                         <div class="card-body">
                           <h4 class="card-title" style="text-align: center;">Ten Brain Research EXG Synapse</h4>
                           <p class="card-text" style="text-align: center;">DIY Neuroscience Kit. A BCI/HCI ready Kit with comprehensive biopotential signal compatibility</p>
                         </div>
                       </div>
                       <div class="card card-related-products" style="height: 100%; border-radius: 10%; color: #fff;;">
-                        <img class="card-img-top" src="{% static 'assets/eeg-images/relaed products/NeuphonyDesktopApp.webp' %}" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
+                        <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyDesktopApp.webp" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
                         <div class="card-body">
                           <h4 class="card-title" style="text-align: center;">Ten Brain Research Desktop App</h4>
                           <p class="card-text" style="text-align: center;">One Stop Solution for Real-time EEG Data, Band Powers and Cognitive Insights (Connection via Cable OR Bluetooth dongle)</p>
                         </div>
                       </div>
                       <div class="card card-related-products" style="height: 100%; border-radius: 10%; color: #fff;;">
-                        <img class="card-img-top" src="{% static 'assets/eeg-images/relaed products/NeuphonyMobileApplication.webp' %}" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
+                        <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyMobileApplication.webp" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
                         <div class="card-body">
                           <h4 class="card-title" style="text-align: center;">Ten Brain Research Mobile Application</h4>
                           <p class="card-text" style="text-align: center;">Brain training &amp; Meditation App . Guided and Music Meditations backed by Neuroscience with Cognitive Insights</p>
                         </div>
                       </div>
                       <div class="card card-related-products" style="height: 100%; border-radius: 10%; color: #fff;;">
-                        <img class="card-img-top" src="{% static 'assets/eeg-images/relaed products/NeuphonyMobileApplication.webp' %}" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
+                        <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyHeadband.webp" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
                         <div class="card-body">
                           <h4 class="card-title" style="text-align: center;">Ten Brain Research Headband</h4>
                           <p class="card-text" style="text-align: center;">6 – Channel Wireless and Dry EEG Headset. (Compatible with Ten Brain Research Mobile Application and Ten Brain Research Desktop Application)</p>

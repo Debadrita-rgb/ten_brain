@@ -20,6 +20,141 @@
     
 </head>
 <body>
+  <style>
+    .desktop-logo {
+  display: block;
+  text-align: center;
+}
+body{
+  font-family: Verdana, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  overflow-x: hidden;
+} 
+.navbar {
+  justify-content: center;
+  padding:0px !important;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+.nav-link{
+  cursor: pointer;
+}
+/* Submenu alignment */
+.dropdown-menu {
+  position: absolute;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #000;
+}
+
+/* Second-layer submenu position */
+.dropdown-menu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 0.1rem;
+}
+
+/* Optional styling for hover background */
+.dropdown-item:hover {
+  color: #f8f9fa;
+  background-color: #3f444b!important;
+        
+}
+.nav-item{
+  padding: 4px 8px !important;
+}
+.custom-shadow {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.bright-text{
+  color: #000;
+}
+.logoimg{
+  width: 171px;
+  height: 47px;
+}
+@media screen and (max-width:991px) {
+  .desktop-logo {
+    display: none;
+  }
+}
+
+@media screen and (min-width:992px) {
+  
+  .desktop-logo {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  .container-fluid{
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .desktop-logo {
+    text-align: left; /* Align logo to the left for mobile */
+    visibility: hidden;
+  }
+  .navbar-toggler {
+    margin-left: auto; /* Move the toggler button to the right */
+  }
+  /* .mobile-view{
+    margin-top: -37px
+  } */
+  .navbar {
+    justify-content: center;
+    padding:0px !important;
+  }
+
+  /* Show dropdown on hover */
+  .dropdown:hover > .dropdown-menu {
+    display: block;
+  }
+  .nav-link{
+    cursor: pointer;
+  }
+  /* Submenu alignment */
+  .dropdown-menu {
+    position: absolute;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #000;
+  }
+
+  /* Second-layer submenu position */
+  .dropdown-menu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-left: 0.1rem;
+  }
+
+    /* Optional styling for hover background */
+    .dropdown-item:hover {
+        color: #f8f9fa;
+        background-color: #3f444b!important;
+        
+    }
+    .nav-item{
+        padding: 4px 8px !important;
+    }
+    .custom-shadow {
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .bright-text{
+        color: #000;
+    }
+}
+
+
+  </style>
     <div class="container-fluid">
     <!--Header start-->
     <header class="bg-light custom-shadow">

@@ -187,7 +187,7 @@
         <a href="/blog_view/{{b.id}}" style="text-decoration: none;">
             <div class="card">
                 <div class="card-header">
-                    <img src="{{ b.blog_image }}" alt="Tesla Cybertruck">
+                    <img src="{{b.blog_image}}" alt="Tesla Cybertruck">
                 </div>
                 <div class="card-body">
                     <p>{{b.blog_title | safe | striptags | truncatewords_html:9}}</p>
