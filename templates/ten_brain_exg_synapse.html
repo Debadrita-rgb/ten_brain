@@ -784,79 +784,83 @@
             </div>
            </div>
     
-           <style>/* General Styles */
-            .explore-container {
-                width: 100%;
-                padding: 0 15px;
-                margin: 0 auto;
-            }
-            
-            .explore-row {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-            }
-            
-            .explore-col {
-                padding: 0 15px;
-                box-sizing: border-box;
-            }
-            
-            .explore-box {
-                background-color: #f4f4f4;
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
-            
-            .explore-heading {
-                font-size: 24px;
-                margin-bottom: 15px;
-            }
-            
-            .explore-subheading {
-                font-size: 20px;
-                margin-bottom: 15px;
-            }
-            
-            .explore-paragraph {
-                font-size: 16px;
-                color: #666;
-            }
-            
-            /* Large devices (Desktops) */
-            @media (min-width: 992px) {
-                .explore-col-lg-6 {
-                    width: 48%; /* Two columns side by side */
-                }
-            }
-            
-            /* Medium devices (Tablets) */
-            @media (max-width: 991px) and (min-width: 768px) {
-                .explore-col-md-12 {
-                    width: 100%; /* Full width for tablets */
-                }
-            }
-            
-            /* Small devices (Phones) */
-            @media (max-width: 767px) {
-                .explore-col-lg-6, .explore-col-md-12 {
-                    width: 100%; /* Full width for mobile */
-                }
-            
-                .explore-box {
-                    padding: 15px;
-                }
-            
-                .explore-heading, .explore-subheading {
-                    font-size: 20px;
-                }
-            
-                .explore-paragraph {
-                    font-size: 14px;
-                }
-            }
-            </style>
+           /* General Styles */
+.explore-container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.explore-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.explore-col {
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.explore-box {
+    background-color: #000000; /* Black background */
+    border: 2px solid white; /* White border */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center-align text */
+}
+
+.explore-heading {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: white; /* White color for headings */
+}
+
+.explore-subheading {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: white; /* White color for subheading */
+}
+
+.explore-paragraph {
+    font-size: 16px;
+    color: #666; /* Lighter color for paragraphs */
+}
+
+/* Large devices (Desktops) */
+@media (min-width: 992px) {
+    .explore-col-lg-6 {
+        width: 48%; /* Two columns side by side */
+    }
+}
+
+/* Medium devices (Tablets) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .explore-col-md-12 {
+        width: 100%; /* Full width for tablets */
+    }
+}
+
+/* Small devices (Phones) */
+@media (max-width: 767px) {
+    .explore-col-lg-6, .explore-col-md-12 {
+        width: 100%; /* Full width for mobile */
+    }
+
+    .explore-box {
+        padding: 15px;
+    }
+
+    .explore-heading, .explore-subheading {
+        font-size: 20px;
+    }
+
+    .explore-paragraph {
+        font-size: 14px;
+    }
+}
+
        
          <!-- Explore Section -->
               <div class="explore-container mt-5">
