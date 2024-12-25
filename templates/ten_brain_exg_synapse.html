@@ -784,40 +784,116 @@
             </div>
            </div>
     
+           <style>/* General Styles */
+            .explore-container {
+                width: 100%;
+                padding: 0 15px;
+                margin: 0 auto;
+            }
+            
+            .explore-row {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            
+            .explore-col {
+                padding: 0 15px;
+                box-sizing: border-box;
+            }
+            
+            .explore-box {
+                background-color: #f4f4f4;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            
+            .explore-heading {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+            
+            .explore-subheading {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .explore-paragraph {
+                font-size: 16px;
+                color: #666;
+            }
+            
+            /* Large devices (Desktops) */
+            @media (min-width: 992px) {
+                .explore-col-lg-6 {
+                    width: 48%; /* Two columns side by side */
+                }
+            }
+            
+            /* Medium devices (Tablets) */
+            @media (max-width: 991px) and (min-width: 768px) {
+                .explore-col-md-12 {
+                    width: 100%; /* Full width for tablets */
+                }
+            }
+            
+            /* Small devices (Phones) */
+            @media (max-width: 767px) {
+                .explore-col-lg-6, .explore-col-md-12 {
+                    width: 100%; /* Full width for mobile */
+                }
+            
+                .explore-box {
+                    padding: 15px;
+                }
+            
+                .explore-heading, .explore-subheading {
+                    font-size: 20px;
+                }
+            
+                .explore-paragraph {
+                    font-size: 14px;
+                }
+            }
+            </style>
        
-          <!--- explore box  ---> 
-           <div class="container mt-5">
-            <!-- First Row -->
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4">
-                    <div class="box">
-                        <h3>Explore Biopotential Data</h3>
-                        <p>Capture and analyze diverse body signals for health and tech applications with Synapse.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 mb-4">
-                    <div class="box">
-                        <h3>Project Pathways</h3>
-                        <p>From health monitors to interactive tech, Synapse provides projects.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Second Row -->
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4">
-                    <div class="box">
-                        <h3>Accessible Technology</h3>
-                        <p>Get started on your neuroscience journey with Synapse.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 mb-4">
-                    <div class="box">
-                        <h5>Explore and Learn with "HCI & Biofeedback Kit"</h5>
-                        <p>Discover the fusion of technology and wellness biofeedback kit designed.</p>
-                    </div>
-                </div>
+         <!-- Explore Section -->
+              <div class="explore-container mt-5">
+    <!-- First Row -->
+                   <div class="explore-row">
+        <div class="explore-col explore-col-lg-6 explore-col-md-12 mb-4">
+            <div class="explore-box">
+                <h3 class="explore-heading">Explore Biopotential Data</h3>
+                <p class="explore-paragraph">Capture and analyze diverse body signals for health and tech applications with Synapse.</p>
             </div>
         </div>
+        <div class="explore-col explore-col-lg-6 explore-col-md-12 mb-4">
+            <div class="explore-box">
+                <h3 class="explore-heading">Project Pathways</h3>
+                <p class="explore-paragraph">From health monitors to interactive tech, Synapse provides projects.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Row -->
+    <div class="explore-row">
+        <div class="explore-col explore-col-lg-6 explore-col-md-12 mb-4">
+            <div class="explore-box">
+                <h3 class="explore-heading">Accessible Technology</h3>
+                <p class="explore-paragraph">Get started on your neuroscience journey with Synapse.</p>
+            </div>
+        </div>
+        <div class="explore-col explore-col-lg-6 explore-col-md-12 mb-4">
+            <div class="explore-box">
+                <h5 class="explore-subheading">Explore and Learn with "HCI & Biofeedback Kit"</h5>
+                <p class="explore-paragraph">Discover the fusion of technology and wellness biofeedback kit designed.</p>
+            </div>
+        </div>
+    </div>
+              </div>
+<!-- End Explore Section -->
+
         <!-- end box -->
            <!--Get In Touch-->
            <div class="row mt-4  ms-3 me-3">
