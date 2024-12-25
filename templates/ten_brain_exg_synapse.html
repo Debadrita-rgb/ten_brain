@@ -560,6 +560,55 @@
                 <button class="btn">Access Github Repository</button>
             </div>
          </div>
+
+
+         <!---Neuphony EXG Synapse Product Information -->
+         <style>
+          .product {
+    padding: 20px;
+}
+
+.product-row {
+    display: flex;
+    flex-wrap: wrap; /* Allows columns to wrap on small screens */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-image {
+    flex: 1 1 50%; /* 50% width on larger screens */
+    padding: 10px;
+    text-align: center;
+}
+
+.product-details {
+    flex: 1 1 50%; /* 50% width on larger screens */
+    padding: 10px;
+}
+
+.product-image img {
+    max-width: 100%; /* Make image responsive */
+    height: auto;
+}
+
+/* Media Query for small screens */
+@media (max-width: 768px) {
+    .product-row {
+        flex-direction: column; /* Stack the columns vertically on smaller screens */
+        text-align: center; /* Center the text on smaller screens */
+    }
+
+    .product-image,
+    .product-details {
+        flex: 1 1 100%; /* Full width on smaller screens */
+    }
+    
+    .product-image img {
+        max-width: 100%; /* Ensure the image scales properly */
+    }
+}
+
+         </style>
          <div class="product">
             <h3 class="text-center"><b>Neuphony EXG Synapse Product Information</b></h3>
             <div class="row align-items-center">
@@ -577,6 +626,8 @@
                 </div>
             </div>   
          </div>
+
+         <!--- end of Neuphony EXG Synapse Product Information-->
          <!--Product description -->
          <div class="container">
             <div class="text-center my-4">
