@@ -391,15 +391,6 @@
       }
       
 
-      .card-related-products{
-  /* width: 0rem; */
-  width: 20px; 
-  height: 100%; 
-  /* background-color: #111;  */
-  border-radius: 10%;
-  color: #fff;;
-}
-
       .card {
         flex: 0 0 23%; /* Show 4 cards at a time with some space */
         padding: 10px;
@@ -821,7 +812,61 @@
     
       
         
-    
+    <style>
+      .my-slider{
+  padding: 0 70px;
+}
+.slick-initialized .slick-slide{
+  background-color: #111;
+  color: #FFF;
+  height: 200px;
+  margin: 0 15px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.slick-next, .slick-prev{
+  z-index: 5;
+}
+.slick-next{
+  right: 15px;
+}
+.slick-prev{
+  left: 15px;
+}
+.slick-next:before, .slick-prev:before{
+  color: #000;
+  font-size: 26px;
+}
+.card-related-products{
+  /* width: 0rem; */
+  width: 20px; 
+  height: 100%; 
+  /* background-color: #111;  */
+  border-radius: 10%;
+  color: #fff;;
+}
+@media (max-width: 768px) {
+.slick-initialized .slick-slide{
+  background-color: #111;
+  color: #FFF;
+  height: 200px;
+  margin: 0 15px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-list{
+  margin-left: -28px !important;
+  margin-right: -32px !important;
+}
+}
+
+    </style>
      <!--Related Products-->
      <!-- Related Products -->
     <div class="row mt-4">
