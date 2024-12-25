@@ -26,7 +26,37 @@ def neuroscience_kits(request):
 
 
 def ten_brain_exg_synapse(request):
-    return render(request,'ten_brain_exg_synapse.html')
+    context={}
+    if request.method=='POST':
+        uname=request.POST['uname']
+        umail=request.POST['uemail']
+        umob=request.POST['umobile']
+        ucountry = request.POST['ucountry']
+        umsg=request.POST['umessage']
+        # print(uname,'-',umail,'-',umob,'-',umsg)
+        u=Contacts.objects.create(name=uname,email=umail,mobile=umob,message=umsg,country = ucountry)        
+        u.save()
+        html_content = render_to_string(
+            "my_email.html",
+            context={"my_variable": 42},
+        )
+        text_content = strip_tags(html_content)
+        # Then, create a multipart email instance.
+        msg = EmailMultiAlternatives(
+            "Submitted your query successfully",
+            text_content,
+            "debadritapaul76@gmail.com",
+            [umail],
+            headers={"List-Unsubscribe": "<unsub@example.com>"},
+        )
+        msg.attach_alternative(html_content, "text/html")
+        # print(msg)
+        msg.send()
+        context['success_msg']='Your Query is successfully send to us.We will contact you soon'
+        return render(request,'ten_brain_exg_synapse.html',context)
+    else:            
+        return render(request,'ten_brain_exg_synapse.html')
+    # return render(request,'ten_brain_exg_synapse.html')
 
 def metal_health_podcast(request):
     return render(request, 'metal_health_podcast.html')
