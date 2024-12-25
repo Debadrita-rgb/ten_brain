@@ -3,402 +3,458 @@
 {% load static %}
 
 <style>
-.head {
-    width: 100%; /* Full width for header */
-    height: auto; /* Adjusts based on image aspect ratio */
-    position: relative; /* To position the small image and text within */
-    margin-bottom: 20px; /* Space below the header */
-}
 
-.head img {
-    width: 100%; /* Ensure the header image takes up full width */
-    height: auto; /* Maintains aspect ratio */
-}
-.center-text {
-text-align: center; /* Center the text horizontally */
-position: absolute; /* Positioning relative to the header */
-top: 0%; /* Position it a bit lower within the header */
-left: 50%;
-transform: translateX(-50%); /* Center the element horizontally */
-color: white; /* Make sure the text is white */
-font-family: Arial, sans-serif; /* Use a clean font */
-}
-
-.center-text h2 {
-font-size: 2rem;
-margin-bottom: 10px; /* Space below the heading */
-}
-
-.center-text h3 {
-font-size: 1.5rem;
-margin-bottom: 20px; /* Space below the subheading */
-}
-
-.center-text p {
-font-size: 1rem;
-line-height: 1.5;
-}
-
-/* Ten Brain Research EXG Synapse ends */
-/* list content starts */
-.w3-content{
-    list-style: none;
-    margin-top: 5px;
-    display: inline-flex;
-    text-align: center;
-    line-height: 2.2;
-    position: absolute; /* Position the small images over the header image */
-    top: 75%; /* Adjust position from top */
-    left: 50%; /* Center them horizontally */
-    transform: translateX(-50%); /* Center alignment */
-    display: flex; /* Use flexbox for horizontal alignment */
-    justify-content: space-between; /* Space between the small images */
-    width: 70%; /* Adjust width based on the number of small images */
-}
-/* list content ends */
-
-
-.w3-content img {
-    width: 50px; /* Size of the small image */
-    height: auto;
-}
-
-.container {
-    padding: 50px;
-}
-
-.card-custom {
-    background-color: #000;
-    border: 1px solid #444;
-    color: white;
-    font-size: smaller;
-    text-align: center;
-    padding: 20px;
-    border-radius: 15px;
-    margin: 15px 0;
-}
-
-.card-custom h4,
-.card-custom h5 {
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.highlight {
-    color: #39FF14; /* Neon Green Highlight */
-}
-
-.image-section img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.spacing {
-    margin: 20px 0;
-}
-
-.intro-heading {
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 20px;
-}
-
-.video-frame {
-    border: 1px solid white; /* White border */
-    border-radius: 15px; /* Curved corners */
-    overflow: hidden; /* Ensures the corners appear curved */
-    margin-top: 20px; /* Adds space between text and video */
-}
-
-/* Media Queries for smaller screens */
-@media (max-width: 767px) {
-    .small-img-text {
-        position: absolute;
-        top: 65%; /* Adjust position for smaller screens */
-        left: 50%;
-        transform: translateX(-50%);
-        width: 70%; /* Increase the width for small screens */
-        justify-content: space-evenly; /* Spread out the small images evenly */
-    }
-    .body {
-        position: absolute;
-        top: 65%; /* Adjust position for smaller screens */
-        left: 50%;
-        transform: translateX(-50%);
-        width: 70%; /* Increase the width for small screens */
-        justify-content: space-evenly; /* Spread out the small images evenly */
-    }
-
-    .small-img-text img {
-        width: 40px; /* Resize small images for mobile */
-        height: auto;
-    }
-
-    .container {
-        padding: 20px; /* Less padding on smaller screens */
-    }
-
-    .card-custom {
-        font-size: small; /* Reduce font size on small screens */
-        padding: 15px; /* Less padding */
-    }
-
-    .intro-heading h3 {
-        font-size: 1.5rem; /* Adjust heading size for small screens */
-    }
-
-    .video-frame iframe {
-        width: 100%; /* Make iframe responsive */
-        height: auto; /* Adjust height */
-    }
-}
-
-@media (max-width: 576px) {
-    .card-custom {
-        padding: 10px; /* Less padding for very small screens */
-    }
-
-    .intro-heading h3 {
-        font-size: 1.2rem; /* Adjust heading size further */
-    }
-}
-
-/* Packages and Bundles Styles */
-.packages-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 30px;
-}
-.packages-container .card1 img {
-display: block;
-margin-left: auto;
-margin-right: auto;
-margin-bottom: 20px; /* Adds space between the image and the text */
-}
-
-.packages-container .card1 h2 {
-margin-top: 15px; /* Adds space above the text */
-}
-
-.packages-container .card1 p {
-margin-top: 10px; /* Adds space between the heading and paragraph */
-}
-
-.card1 {
-   background-color: #98b5d4;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    text-align: center;
-    color: #ffffff;
-    width: 300px;
-}
-
-.card1-title {
-    font-size: 24px;
-    color: #ffffff;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-.card1-text {
-    font-size: 16px;
-    line-height: 1.5;
-}
-.icon {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-.btn {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-.btn:hover {
-    background-color: #0056b3;
-}
-
-/* Product Description */
-.tabs-container {
-    margin: 50px auto;
-    /* max-width: 800px; */
-    border: 1px solid #ffffff;
-    background-color: #000000;
-  }
-  .nav-tabs {
-    border-bottom: 1px solid #ffffff;
-  }
-  .nav-tabs .nav-link {
-    color: #fff;
-    border: none;
-    background-color: transparent;
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  .nav-tabs .nav-link:hover {
-    background-color: #05050500;
-    color: #00000000;
-  }
-  .nav-tabs .nav-link.active {
-    background-color: #000000;
-    color: #ffffff;
-    font-weight: bold;
-  }
-  .tab-content {
-    padding: 20px;
-    color: #fff;
-    text-align: center; /* Center-align content */
-  }
-  h1 {
-    color: #ffffff;
-    font-size: 28px;
-    margin-bottom: 20px;
-    text-align: center; /* Center-align the Product Description heading */
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  th, td {
-    border: 1px solid #fff;
-    padding: 10px;
-    text-align: left;
-  }
-  th {
-    background-color: #ff9800;
-    color: #000;
+  body {
+      background-color: #000;
+      color: white;
+      font-family: Arial, sans-serif;
   }
   
-
-h1 {
-color: #fff; /* White color for the title */
-text-align: center;
-margin-bottom: 30px;
-}
-.card2 {
-background-color: #1a1a1a;
-border: 1px solid #fff;
-border-radius: 10px;
-}
-.card2 h5 {
-color: #fff; /* White color for the card headers */
-text-align: center;
-margin-top: 15px;
-}
-.card2 ul {
-list-style-type: disc; /* Ensure bullet points are displayed */
-padding-left: 20px; /* Add spacing for indentation */
-color: #fff; /* White color for the list items */
-}
-.card2 ul li {
-margin: 5px 0;
-}
-
-
-.box {
-    background-color: #000000; /* Black background */
-    border: 1px solid #dee2e6; /* Light gray border */
-    padding: 20px;
-    color: #ffffff;
-    text-align: center;
-    border-radius: 8px;
-    height: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow to the boxes */
+  .head {
+      width: 100%; /* Full width for header */
+      height: auto; /* Adjusts based on image aspect ratio */
+      position: relative; /* To position the small image and text within */
+      margin-bottom: 20px; /* Space below the header */
   }
-  .box h3 {
-    margin-bottom: 15px;
-    font-size: 1.5rem;
+  
+  .head img {
+      width: 100%; /* Ensure the header image takes up full width */
+      height: auto; /* Maintains aspect ratio */
   }
-  .box p {
-    font-size: 1rem;
+  .center-text {
+  text-align: center; /* Center the text horizontally */
+  position: absolute; /* Positioning relative to the header */
+  top: 0%; /* Position it a bit lower within the header */
+  left: 50%;
+  transform: translateX(-50%); /* Center the element horizontally */
+  color: white; /* Make sure the text is white */
+  font-family: Arial, sans-serif; /* Use a clean font */
   }
-  .subscription-section {
+  
+  .center-text h2 {
+  font-size: 2rem;
+  margin-bottom: 10px; /* Space below the heading */
+  }
+  
+  .center-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px; /* Space below the subheading */
+  }
+  
+  .center-text p {
+  font-size: 1rem;
+  line-height: 1.5;
+  }
+  
+  /* Ten Brain Research EXG Synapse ends */
+  /* list content starts */
+  .w3-content{
+      list-style: none;
+      margin-top: 5px;
+      display: inline-flex;
+      text-align: center;
+      line-height: 2.2;
+      position: absolute; /* Position the small images over the header image */
+      top: 75%; /* Adjust position from top */
+      left: 50%; /* Center them horizontally */
+      transform: translateX(-50%); /* Center alignment */
+      display: flex; /* Use flexbox for horizontal alignment */
+      justify-content: space-between; /* Space between the small images */
+      width: 70%; /* Adjust width based on the number of small images */
+  }
+  /* list content ends */
+  
+  
+  .w3-content img {
+      width: 50px; /* Size of the small image */
+      height: auto;
+  }
+  
+  .container {
+      padding: 50px;
+  }
+  
+  .card-custom {
+      background-color: #000;
+      border: 1px solid #444;
+      color: white;
+      font-size: smaller;
+      text-align: center;
+      padding: 20px;
+      border-radius: 15px;
+      margin: 15px 0;
+  }
+  
+  .card-custom h4,
+  .card-custom h5 {
+      font-weight: bold;
+      margin-bottom: 15px;
+  }
+  
+  .highlight {
+      color: #39FF14; /* Neon Green Highlight */
+  }
+  
+  .image-section img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+  }
+  
+  .spacing {
+      margin: 20px 0;
+  }
+  
+  /* Intro Heading Styling */
+  .intro-heading {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #f9f9f9; /* Light background for contrast */
+      border-radius: 10px; /* Rounded corners for the section */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  
+  
+  
+  /* Media Queries for Smaller Screens */
+  @media (max-width: 768px) {
+      .intro-heading h3 {
+          font-size: 1.5rem; /* Slightly smaller heading for mobile */
+      }
+  
+      .video-frame {
+          max-width: 100%; /* Make the video occupy full width */
+      }
+  }
+  
+  
+  /* Media Queries for smaller screens */
+  @media (max-width: 767px) {
+      .small-img-text {
+          position: absolute;
+          top: 65%; /* Adjust position for smaller screens */
+          left: 50%;
+          transform: translateX(-50%);
+          width: 70%; /* Increase the width for small screens */
+          justify-content: space-evenly; /* Spread out the small images evenly */
+      }
+      .body {
+          position: absolute;
+          top: 65%; /* Adjust position for smaller screens */
+          left: 50%;
+          transform: translateX(-50%);
+          width: 70%; /* Increase the width for small screens */
+          justify-content: space-evenly; /* Spread out the small images evenly */
+      }
+  
+      .small-img-text img {
+          width: 40px; /* Resize small images for mobile */
+          height: auto;
+      }
+  
+      .container {
+          padding: 20px; /* Less padding on smaller screens */
+      }
+  
+      .card-custom {
+          font-size: small; /* Reduce font size on small screens */
+          padding: 15px; /* Less padding */
+      }
+  
+      .intro-heading h3 {
+          font-size: 1.5rem; /* Adjust heading size for small screens */
+      }
+  
+      .video-frame iframe {
+          width: 100%; /* Make iframe responsive */
+          height: auto; /* Adjust height */
+      }
+  }
+  
+  @media (max-width: 576px) {
+      .card-custom {
+          padding: 10px; /* Less padding for very small screens */
+      }
+  
+      .intro-heading h3 {
+          font-size: 1.2rem; /* Adjust heading size further */
+      }
+  }
+  
+  /* Packages and Bundles Styles */
+  .packages-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 30px;
+  }
+  .packages-container .card1 img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px; /* Adds space between the image and the text */
+  }
+  
+  .packages-container .card1 h2 {
+  margin-top: 15px; /* Adds space above the text */
+  }
+  
+  .packages-container .card1 p {
+  margin-top: 10px; /* Adds space between the heading and paragraph */
+  }
+  
+  .card1 {
+     background-color: #000000;
+     border: 1px solid #fffdfd;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0px 2px 10px rgb(101, 101, 101);
+      padding: 20px;
+      text-align: center;
+      color: #ffffff;
+      width: 300px;
+  }
+  
+  .card1-title {
+      font-size: 24px;
+      color: #ffffff;
+      font-weight: bold;
+      margin-bottom: 15px;
+  }
+  .card1-text {
+      font-size: 16px;
+      line-height: 1.5;
+  }
+  .icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+  }
+  .btn {
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  }
+  .btn:hover {
+      background-color: #0056b3;
+  }
+  /* Product Description */
+  .tabs-container {
+      margin: 50px auto;
+      max-width: 800px;
+      border: 1px solid #ffffff;
+      background-color: #000000;
+    }
+    .nav-tabs {
+      border-bottom: 1px solid #ffffff;
+    }
+    .nav-tabs .nav-link {
+      color: #fff;
+      border: none;
+      background-color: transparent;
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .nav-tabs .nav-link:hover {
+      background-color: #05050500;
+      color: #ffffff;
+    }
+    .nav-tabs .nav-link.active {
+      background-color: #000000;
+      color: #ffffff;
+      font-weight: bold;
+    }
+    .tab-content {
+      padding: 20px;
+      color: #fff;
+      text-align: center; /* Center-align content */
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #fff;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #ff9800;
+      color: #fff9f9;
+    }
+    
+    /* Intro Heading Styling */
+  .intro-heading {
+      text-align: center;
+      margin: 20px auto;
+      padding: 20px;
+     
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  }
+  
+  /* Heading Text */
+  .intro-heading h3 {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 20px;
+  }
+  
+  /* Video Frame Styling */
+  .video-frame {
+      margin: 0 auto;
+      padding: 15px;
+      max-width: 960px; /* Restrict the video width */
+      overflow: hidden;
+  }
+  
+  .video-frame iframe {
+      width: 100%; /* Make the video responsive */
+      
+      border-radius: 10px; /* Rounded corners for the video */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+  }
+  
+  
+  .container h1 {
+  color: #fff; /* White color for the title */
   text-align: center;
-  background-color: #f1f1f1 !important;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.subscription-section h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #333333;
-}
-
-.subscription-section p {
-  font-size: 16px;
-  margin-bottom: 20px;
-  color: #666666;
-}
-
-.subscription-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.subscription-form input[type="email"] {
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  flex: 1;
-  max-width: 300px;
-}
-
-.subscription-form button {
-  padding: 10px 20px;
-  font-size: 14px;
-  color: #ffffff;
-  background-color: #4a69bd;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.subscription-form button:hover {
-  background-color: #3b55a3;
-}
-
-@media (max-width: 600px) {
-  .subscription-form {
-    flex-direction: column;
+  margin-bottom: 30px;
   }
-
-  .subscription-form input[type="email"] {
-    margin-bottom: 10px;
+  .card2 {
+  background-color: #1a1a1a;
+  border: 1px solid #fff;
+  border-radius: 10px;
   }
-}
+  .card2 h5 {
+  color: #fff; /* White color for the card headers */
+  text-align: center;
+  margin-top: 15px;
+  }
+  .card2 ul {
+  list-style-type: disc; /* Ensure bullet points are displayed */
+  padding-left: 20px; /* Add spacing for indentation */
+  color: #fff; /* White color for the list items */
+  }
+  .card2 ul li {
+  margin: 5px 0;
+  }
+  
+  .box {
+      background-color: #000000; /* Black background */
+      border: 1px solid #dee2e6; /* Light gray border */
+      padding: 20px;
+      color: #ffffff;
+      text-align: center;
+      border-radius: 8px;
+      height: 200px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow to the boxes */
+    }
+    .box h3 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+    .box p {
+      font-size: 1rem;
+    }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* Wrapper for the slider */
+  .my-slider {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .slider-container {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    
+    .card3 {
+      flex: 0 0 23%; /* Show 4 cards at a time with some space */
+      padding: 10px;
+      box-sizing: border-box;
+      border: 2px solid white; /* White border for the card */
+      border-radius: 10px; /* Optional: to keep the rounded corners */
+      margin-right: 10px; /* Small space between cards */
+      background-color: rgba(0, 0, 0, 0.6); /* Optional: to make the cards stand out on dark backgrounds */
+    }
+    
+    .card3:last-child {
+      margin-right: 0; /* Remove margin on the last card */
+    }
+    
+    .card3 img {
+      width: 100%;
+      border-radius: 25px;
+      margin-left: 10px;
+      padding-right: 25px;
+    }
+    
+    .card-body {
+      text-align: center;
+      color: white; /* Ensure text is readable on dark background */
+    }
+    
+    /* Navigation buttons */
+    .prev-btn, .next-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 10;
+    }
+    
+    .prev-btn {
+      left: 10px;
+    }
+    
+    .next-btn {
+      right: 10px;
+    }
+    
+    /* Hide navigation buttons on small screens */
+    @media (max-width: 768px) {
+      .card3 {
+        flex: 0 0 100%; /* Show 1 card at a time */
+        margin-right: 0; /* No space between cards on small screens */
+      }
+    }
+    
+  
+  
+      </style>
 
-.card-related-products{
-  /* width: 0rem; */
-  width: 20px; 
-  height: 100%; 
-  /* background-color: #111;  */
-  border-radius: 10%;
-  color: #fff;;
-}
-</style>
 <div class=" bg-black text-white">
-<div class="head">
-    <img src="https://www.neuphony.com/img/product-exg-synapse/header.webp" alt="Ten Brain Research EXG Synapse">
+  <div class="head">
+    <img src="https://www.neuphony.com/img/product-exg-synapse/header.webp" alt="Neuphony EXG Synapse">
     <div class="center-text">
-        <h2 class="mt-4"><span>India leading DIY Brain-Computer Interface Kit</span> </h2>
+        <h2><span>India leading DIY Brain-Computer Interface Kit</span> </h2>
         
         <p>Dive into the world of human-computer interface with  the </p>
            
@@ -408,20 +464,20 @@ margin: 5px 0;
   <div class="row mt-5">
     <ul class="w3-content">
         <li class="col-sm-3">
-            <img src="https://www.neuphony.com/img/product-exg-synapse/EEG.webp" alt="EEG Image">
-            <p class="mt-4" style="color: #fff;">EEG</p>
+            <img src="https://www.neuphony.com/img/product-exg-synapse/EEG.webp" alt="">
+            <p>EEG</p>
         </li>
         <li class="col-sm-3">
-            <img src="https://www.neuphony.com/img/product-exg-synapse/EMG.webp" alt="EMG Image">
-            <p class="mt-4" style="color: #fff;">EMG</p>
+            <img src="https://www.neuphony.com/img/product-exg-synapse/EMG.webp" alt="">
+            <p>EMG</p>
         </li>
         <li class="col-sm-3">
-            <img src="https://www.neuphony.com/img/product-exg-synapse/EOG.webp" alt="EOG Image">
-            <p class="mt-4" style="color: #fff;">EOG</p>
+            <img src="https://www.neuphony.com/img/product-exg-synapse/EOG.webp" alt="">
+            <p>EOG</p>
         </li>
         <li class="col-sm-3">
-            <img src="https://www.neuphony.com/img/product-exg-synapse/ECG.webp" alt="ECG Image">
-            <p class="mt-4" style="color: #fff;">ECG</p>
+            <img src="https://www.neuphony.com/img/product-exg-synapse/ECG.webp" alt="">
+            <p>ECG</p>
         </li>
     </ul>
 </div>
@@ -461,14 +517,14 @@ margin: 5px 0;
                 <h4 class="mb-4">For All Explorers</h4>
                 <p>Simple and Comprehensive: Whether you’re studying, researching, or just passionate about neuroscience, Synapse is your perfect companion.</p>
                 <div class="image-section">
-                    <img src="https://www.neuphony.com/img/product-exg-synapse/Explorers.webp" alt="Ten Brain Research EXG Synapse" class="img-fluid">
+                    <img src="https://www.neuphony.com/img/product-exg-synapse/Explorers.webp" alt="Neuphony EXG Synapse" class="img-fluid">
                 </div>
             </div>
         </div>
     </div>
     <!-- Intro Heading -->
-    <div class="intro-heading">
-        <h3>Introducing Neuphony EXG Synapse DIY Neuroscience Kits</h3>
+    <div class="intro">
+        <h3 class="text-center">Introducing Neuphony EXG Synapse DIY Neuroscience Kits</h3>
         <div class="video-frame">
             <iframe width="947" height="448" src="https://www.youtube.com/embed/jTDCuVDt-ms" 
                     title="Unlock the Future of HCI &amp; BCI Projects | Introducing Neuphony EXG Synapse DIY Neuroscience Kits" 
@@ -505,7 +561,7 @@ margin: 5px 0;
     <div class="row align-items-center">
         <!-- Left Column: Image -->
         <div class="col-md-6 text-center">
-            <img src="https://www.neuphony.com/img/product-exg-synapse/synapseproduct1.webp" alt="Ten Brain Research EXG Synapse Product Image" class="img-fluid" style="max-width: 300px; height: auto;">
+            <img src="https://www.neuphony.com/img/product-exg-synapse/synapseproduct1.webp" alt="Neuphony EXG Synapse Product Image" class="img-fluid" style="max-width: 300px; height: auto;">
         </div>
         <!-- Right Column: Product Details -->
         <div class="col-md-6">
@@ -516,11 +572,6 @@ margin: 5px 0;
         </div>
     </div>   
  </div>
- <style>
-    .nav-description{
-        padding: 0px 0px !important;
-    }
- </style>
  <!--Product description -->
  <div class="container">
     <div class="text-center my-4">
@@ -528,12 +579,12 @@ margin: 5px 0;
     </div>
     <div class="tabs-container">
       <ul class="nav nav-tabs justify-content-center" id="productTabs" role="tablist">
-        <li class="nav-item nav-description" role="presentation">
+        <li class="nav-item" role="presentation">
           <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true">
             About Synapse
           </button>
         </li>
-        <li class="nav-item nav-description" role="presentation">
+        <li class="nav-item" role="presentation">
           <button class="nav-link" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs" type="button" role="tab" aria-controls="specs" aria-selected="false">
             Technical Specifications
           </button>
@@ -541,7 +592,7 @@ margin: 5px 0;
       </ul>
       <div class="tab-content" id="productTabsContent">
         <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
-          <p style="background-color: #000;">
+          <p>
             Dive into DIY neuroscience with EXG Synapse Kits! Perfect for students and innovators, effortlessly capture EMG, ECG, EEG, and EOG signals. Explore the brain and muscles—it’s hands-on and exciting. 
             Neuphony Synapse has comprehensive biopotential signal compatibility, covering ECG, EEG, EOG, and EMG, ensuring a versatile solution for various physiological monitoring applications. 
             It seamlessly pairs with any MCU featuring ADC, expanding compatibility across platforms like Arduino, ESP32, STM32, and more. 
@@ -557,39 +608,39 @@ margin: 5px 0;
               </tr>
             </thead>
             <tbody>
-              <tr  style="background-color: #000;">
+              <tr>
                 <td>Input Voltage</td>
                 <td>3.3V</td>
               </tr>
-              <tr  style="background-color: #000;">
+              <tr>
                 <td>Input Impedance</td>
                 <td>20<sup>9</sup> Ω</td>
               </tr>
-              <tr  style="background-color: #000;">
+              <tr>
                 <td>Compatible Hardware</td>
                 <td>Any ADC input</td>
               </tr>
-              <tr  style="background-color: #000;">
+              <tr>
                 <td>Biopotentials</td>
                 <td>ECG, EMG, EOG, or EEG (configurable bandpass) | By default configured for a bandwidth of 1.6Hz to 47Hz and Gain 50</td>
               </tr>
-              <tr  style="background-color: #000;">
+              <tr>
                 <td>No. of Channels</td>
                 <td>1</td>
               </tr>
-              <tr  style="background-color: #000;">
+              <tr>
                 <td>Electrodes</td>
                 <td>3</td>
               </tr>
-              <tr  style="background-color: #000;">
+              <tr>
                 <td>Dimensions</td>
                 <td>30.0 x 33.0 mm</td>
               </tr>
-              <tr  style="background-color: #000;">
+              <tr>
                 <td>Open Source</td>
                 <td>Hardware</td>
               </tr>
-              <tr  style="background-color: #000;">
+              <tr>
                 <td>Special Features</td>
                 <td>Very Compact and space-utilized EXG Synapse</td>
               </tr>
@@ -665,17 +716,20 @@ margin: 5px 0;
       </div>
     </div>
   </div>
-  <div class="intro-heading">
-    <h3>Introducing Neuphony EXG Synapse DIY Neuroscience Kits</h3>
-    <div >
+   <!-- Intro Heading -->
+   <div class="intro">
+    <h3 class="text-center">Introducing Neuphony EXG Synapse DIY Neuroscience Kits</h3>
+    <div class="video-frame">
         <iframe width="947" height="448" src="https://www.youtube.com/embed/jTDCuVDt-ms" 
                 title="Unlock the Future of HCI &amp; BCI Projects | Introducing Neuphony EXG Synapse DIY Neuroscience Kits" 
                 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                referrerpolicy="strict-origin-when-cross-origin" >
         </iframe>
     </div>
 </div>
-  <!-- </div> -->
+
+<!-- </div>
+  </div> -->
   <div class="container mt-5">
     <!-- First Row -->
     <div class="row">
@@ -708,10 +762,8 @@ margin: 5px 0;
       </div>
     </div>
   </div>
-  
-
-  <!--Get In Touch-->
-  <div class="row mt-4  ms-3 me-3">
+   <!--Get In Touch-->
+   <div class="row mt-4  ms-3 me-3">
     <h5><p style="text-align: center;">Get In Touch</p></h5>
     <h2><p style="text-align: center;"><b>Get in touch with our team to see how Ten Brain Research can help you</b></p></h2>
     <h6><p style="text-align: center;"><b>Get in touch with our team to see how Ten Brain Research can revolutionize interaction with technology</b></p></h6>
@@ -719,35 +771,29 @@ margin: 5px 0;
       <div class="col-sm-8">
           <div class="row">
             <div class="col-sm-6">
-              <img src="https://www.neuphony.com/img/product-exg-synapse/interaction.webp" width="600" class="get-in-touch-img">
+              <img src="https://www.neuphony.com/img/product-exg-synapse/interaction.webp" width="500" class="get-in-touch-img">
             </div>
-            <!-- <div class="clearfix"></div> -->
             <div class="col-sm-6 get-in">
-              <form action="/ten-brain-eeg-headband" method="post" autocomplete="off">
-                {% if success_msg %}
-                    <div id="alerts" class="alert alert-success" role="alert">{{success_msg}}
-                    </div>
-                {% endif %}
-                  {% csrf_token %}
+              <form>
                 <div class="form-group">
                   <label for="exampleInputEmail1" class="label-text">Your Name</label>
-                  <input type="text" class="form-control text-form" name="uname" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your name">
+                  <input type="text" class="form-control text-form" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your name">
                 </div>
                 <div class="form-group mt-3">
                   <label for="exampleInputEmail1" class="label-text">Email ID</label>
-                  <input type="email" class="form-control text-form" name="uemail" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email ID">
+                  <input type="email" class="form-control text-form" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email ID">
                 </div>
                 <div class="form-group mt-3">
                   <label for="exampleInputEmail1" class="label-text">Phone No</label>
-                  <input type="number" class="form-control text-form" name="umobile" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Phone No">
+                  <input type="number" class="form-control text-form" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Phone No">
                 </div>
                 <div class="form-group mt-3">
                   <label for="exampleInputEmail1" class="label-text">Country</label>
-                  <input type="text" class="form-control text-form" name="ucountry" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Country">
+                  <input type="text" class="form-control text-form" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Country">
                 </div>
                 <div class="form-group mt-3">
                   <label for="exampleInputEmail1" class="label-text">Your Message</label>
-                  <input type="text" class="form-control text-form" name="umessage" size="30" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your message">
+                  <input type="text" class="form-control text-form" size="30" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your message">
                 </div>
                 
                 <button type="submit" class="btn btn-warning mt-3 submit-btn">Submit</button>
@@ -755,67 +801,72 @@ margin: 5px 0;
             </div>
           </div>
       </div>
-    <div class="col-sm-2"></div>
   </div>
   <!--end Get in touch-->
 
-  <!--Related Products-->
-  <div class="row mt-4">
-    <h5><p style="text-align: center;">Related Products</p></h5>
-    <h2><p style="text-align: center;"><b>Embark on a journey of Brain Exploration with us</b></p></h2>
-    <div class="col-sm-1"></div>
-    <div class="col-sm-10">
-        <div class="row">
-          <div class="wrapper">
-            <div class="my-slider">
-              <div class="card card-related-products" style="height: 100%; border-radius: 10%; color: #fff;;">
-                <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyFlexCap.webp" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
-                <div class="card-body">
-                  <h4 class="card-title" style="text-align: center;">Ten Brain Research Flex Cap</h4>
-                  <p class="card-text" style="text-align: center;">8 – Channel Wireless and Dry EEG Headset. Movable Electrodes and compatible with Ten Brain Research Desktop Application</p>
-                </div>
-              </div>
-              <div class="card card-related-products" style="height: 100%; border-radius: 10%; color: #fff;;">
-                <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyEXGSynapse.webp" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
-                <div class="card-body">
-                  <h4 class="card-title" style="text-align: center;">Ten Brain Research EXG Synapse</h4>
-                  <p class="card-text" style="text-align: center;">DIY Neuroscience Kit. A BCI/HCI ready Kit with comprehensive biopotential signal compatibility</p>
-                </div>
-              </div>
-              <div class="card card-related-products" style="height: 100%; border-radius: 10%; color: #fff;;">
-                <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyDesktopApp.webp" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
-                <div class="card-body">
-                  <h4 class="card-title" style="text-align: center;">Ten Brain Research Desktop App</h4>
-                  <p class="card-text" style="text-align: center;">One Stop Solution for Real-time EEG Data, Band Powers and Cognitive Insights (Connection via Cable OR Bluetooth dongle)</p>
-                </div>
-              </div>
-              <div class="card card-related-products" style="height: 100%; border-radius: 10%; color: #fff;;">
-                <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyMobileApplication.webp" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
-                <div class="card-body">
-                  <h4 class="card-title" style="text-align: center;">Ten Brain Research Mobile Application</h4>
-                  <p class="card-text" style="text-align: center;">Brain training &amp; Meditation App . Guided and Music Meditations backed by Neuroscience with Cognitive Insights</p>
-                </div>
-              </div>
-              <div class="card card-related-products" style="height: 100%; border-radius: 10%; color: #fff;;">
-                <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyMobileApplication.webp" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
-                <div class="card-body">
-                  <h4 class="card-title" style="text-align: center;">Ten Brain Research Headband</h4>
-                  <p class="card-text" style="text-align: center;">6 – Channel Wireless and Dry EEG Headset. (Compatible with Ten Brain Research Mobile Application and Ten Brain Research Desktop Application)</p>
-                </div>
-              </div>
-              
-                                    
-              </div>
+
+ <!-- Related Products -->
+ <div class="row mt-4">
+  <h5><p style="text-align: center;">Related Products</p></h5>
+  <h2><p style="text-align: center;"><b>Embark on a journey of Brain Exploration with us</b></p></h2>
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+    <div class="wrapper">
+      <div class="my-slider">
+        <div class="slider-container">
+          <!-- Card 1 -->
+          <div class="card3 card-related-products">
+            <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyHeadband.webp" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title" style="text-align: center;">Ten Brain Research Flex Cap</h4>
+              <p class="card-text" style="text-align: center;">8 – Channel Wireless and Dry EEG Headset. Movable Electrodes and compatible with Ten Brain Research Desktop Application</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="card3 card-related-products">
+            <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyFlexCap.webp" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title" style="text-align: center;">Ten Brain Research EXG Synapse</h4>
+              <p class="card-text" style="text-align: center;">DIY Neuroscience Kit. A BCI/HCI ready Kit with comprehensive biopotential signal compatibility</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="card3 card-related-products">
+            <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyEXGSynapse.webp" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title" style="text-align: center;">Ten Brain Research Desktop App</h4>
+              <p class="card-text" style="text-align: center;">One Stop Solution for Real-time EEG Data, Band Powers and Cognitive Insights (Connection via Cable OR Bluetooth dongle)</p>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="card3 card-related-products">
+            <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyMobileApplication.webp" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title" style="text-align: center;">Ten Brain Research Mobile Application</h4>
+              <p class="card-text" style="text-align: center;">Brain training &amp; Meditation App. Guided and Music Meditations backed by Neuroscience with Cognitive Insights</p>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="card3 card-related-products">
+            <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyDesktopApp.webp" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title" style="text-align: center;">Ten Brain Research Headband</h4>
+              <p class="card-text" style="text-align: center;">6 – Channel Wireless and Dry EEG Headset. (Compatible with Ten Brain Research Mobile Application and Ten Brain Research Desktop Application)</p>
+            </div>
           </div>
         </div>
+        <!-- Controls -->
+        <button class="prev-btn" onclick="moveSlider('prev')">&#10094;</button>
+        <button class="next-btn" onclick="moveSlider('next')">&#10095;</button>
+      </div>
     </div>
-      <div class="col-sm-1"></div>
   </div>
-  <!--end related Products-->
+  <div class="col-sm-1"></div>
+</div>
+<!-- End Related Products -->
+
 
 </div>
-</div>
-
 <div class="subscription-section mt-4">
     <h2>New from Ten Brain Research?</h2>
     <p>Get the latest from Ten Brain Research by subscribing now.</p>
