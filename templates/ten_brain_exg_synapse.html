@@ -10,26 +10,38 @@
         font-family: Arial, sans-serif;
        }*/
 
-    .head {
-        width: 100%; /* Full width for header */
-        height: auto; /* Adjusts based on image aspect ratio */
-        position: relative; /* To position the small image and text within */
-        margin-bottom: 20px; /* Space below the header */
-    }
-    
-    .head img {
-        width: 100%; /* Ensure the header image takes up full width */
-        height: auto; /* Maintains aspect ratio */
-    }
-    .center-text {
-    text-align: center; /* Center the text horizontally */
-    position: absolute; /* Positioning relative to the header */
-    top: 0%; /* Position it a bit lower within the header */
-    left: 50%;
-    transform: translateX(-50%); /* Center the element horizontally */
-    color: white; /* Make sure the text is white */
-    font-family: Arial, sans-serif; /* Use a clean font */
-    }
+       .head {
+  position: relative;
+  text-align: center;
+}
+
+.head img {
+  width: 100%; /* Make image responsive */
+  height: auto;
+}
+
+.center-text {
+  position: absolute;
+  top: 50%; /* Initially place in the center */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a background for readability */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+  .center-text {
+    position: static; /* Move out of the absolute positioning */
+    transform: none;
+    margin-top: 10px;
+    color: #000; /* Optional: Adjust color for readability */
+    background-color: transparent; /* Remove background */
+  }
+}
+
     
     .center-text h2 {
     font-size: 2rem;
