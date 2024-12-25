@@ -518,11 +518,12 @@
                 <img src="https://www.neuphony.com/img/neuphony-flex-cap/flexcap-demo.webp" alt=" Product" class="img-fluid rounded">
             </div>
             <div class="col-sm-6">
-                <form action="/ten_brain_eeg_flexcap" method="post" style="text-align: left;">
-                  {% if success_msg %}
+              {% if success_msg %}
                           <div id="alerts" class="alert alert-success" role="alert">{{success_msg}}
                           </div>
                       {% endif %}  
+                <form action="/ten_brain_eeg_flexcap" method="post" style="text-align: left;">
+                  
                     {% csrf_token %}
                     <div class="form-group" >
                         <label for="name" ><b >Your Name</b></label>
