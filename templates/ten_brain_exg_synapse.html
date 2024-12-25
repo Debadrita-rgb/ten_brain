@@ -458,8 +458,7 @@
         <div class="head">
             <img src="https://www.neuphony.com/img/product-exg-synapse/header.webp" alt="Neuphony EXG Synapse">
             <div class="center-text">
-                <h5><span>India leading DIY Brain-Computer Interface Kit</span> </h5>
-              
+                <h5><span>India leading DIY Brain-Computer Interface Kit</span> </h5>  
             </div>
             
           <!-- list content starts -->
@@ -561,74 +560,70 @@
 
 
        
-         <!---Neuphony EXG Synapse Product Information -->
          <style>
-          .product {
-    padding: 20px;
-}
-
-.product-row {
-    display: flex;
-    flex-wrap: wrap; /* Allows columns to wrap on small screens */
-    justify-content: space-between;
-    align-items: center;
-}
-
-.product-image {
-    flex: 1 1 50%; /* 50% width on larger screens */
-    padding: 10px;
-    text-align: center;
-}
-
-.product-details {
-    flex: 1 1 50%; /* 50% width on larger screens */
-    padding: 10px;
-}
-
-.product-image img {
-    max-width: 100%; /* Make image responsive */
-    height: auto;
-}
-
-/* Media Query for small screens */
-@media (max-width: 768px) {
-    .product-row {
-        flex-direction: column; /* Stack the columns vertically on smaller screens */
-        text-align: center; /* Center the text on smaller screens */
-    }
-
-    .product-image,
-    .product-details {
-        flex: 1 1 100%; /* Full width on smaller screens */
-    }
-    
-    .product-image img {
-        max-width: 100%; /* Ensure the image scales properly */
-    }
-}
-
-         </style>
-         <div class="product">
+          .product-container {
+              padding: 20px;
+          }
+        
+          .product-layout {
+              display: flex;
+              flex-wrap: wrap; /* Allows columns to wrap on small screens */
+              justify-content: space-between;
+              align-items: center;
+          }
+        
+          .image-container {
+              flex: 1 1 50%; /* 50% width on larger screens */
+              padding: 10px;
+              text-align: center;
+          }
+        
+          .details-container {
+              flex: 1 1 50%; /* 50% width on larger screens */
+              padding: 10px;
+          }
+        
+          .image-container img {
+              max-width: 100%; /* Ensure image scales with the width of its container */
+              height: auto; /* Maintain aspect ratio */
+          }
+        
+          /* Media Query for small screens */
+          @media (max-width: 768px) {
+              .product-layout {
+                  flex-direction: column; /* Stack the columns vertically on smaller screens */
+                  text-align: center; /* Center the text on smaller screens */
+              }
+        
+              .image-container,
+              .details-container {
+                  flex: 1 1 100%; /* Full width on smaller screens */
+              }
+          }
+        </style>
+        
+        <div class="product-container">
             <h3 class="text-center"><b>Neuphony EXG Synapse Product Information</b></h3>
-            <div class="row align-items-center">
+            <div class="row align-items-center product-layout">
                 <!-- Left Column: Image -->
-                <div class="col-md-6 text-center">
-                  <img src="https://www.neuphony.com/img/product-exg-synapse/synapseproduct1.webp" alt="Neuphony EXG Synapse Product Image" class="img-fluid" style="max-width: 300px; height: auto;">
-              </div>
-              
+                <div class="col-md-6 text-center image-container">
+                    <img src="https://www.neuphony.com/img/product-exg-synapse/synapseproduct1.webp" alt="Neuphony EXG Synapse Product Image" class="img-fluid" style="max-width: 100%; height: auto;">
+                </div>
+                
                 <!-- Right Column: Product Details -->
-                <div class="col-md-6">
+                <div class="col-md-6 details-container">
                     <h4>Neuphony EXG Synapse</h4>
                     <p>
                         DIY HCI/BCI & Robotics Kit for beginners with biopotential signal compatibility, covering ECG, EEG, EOG, and EMG.
                     </p>
                 </div>
             </div>   
-         </div>
+        </div>
+        
 
          <!--- end of Neuphony EXG Synapse Product Information-->
 
-         
+
          <!--Product description -->
          <div class="container">
             <div class="text-center my-4">
