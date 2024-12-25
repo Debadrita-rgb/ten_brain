@@ -669,34 +669,11 @@
 <div class="subscription-section">
     <h2>New from Ten Brain Research?</h2>
     <p>Get the latest from Ten Brain Research by subscribing now.</p>
-    <form class="subscription-form">
-      <input type="email" placeholder="Email" required />
+    <form class="subscription-form" method="post" action="/submit_subscription">
+      {% csrf_token %}
+      <input type="email" name="uemail" placeholder="Email" required  />
+      <input type="hidden" name="page_url" value="testimonials_and_reviews">
       <button type="submit">Subscribe</button>
     </form>
-  </div>
-  <div class="whatsapp-container1">
-    <div class="whatsapp-container">
-        <input type="checkbox" id="toggle-query" class="toggle-checkbox" />
-<label for="toggle-query" class="close-button" aria-label="Close">
-<i class="fa-solid fa-xmark"></i>
-</label>
-       
-        <div class="query-label">Have a query?</div>
-       
-      </div>
-      <div class="whatsapp-logo">
-        <a
-          href="https://wa.me/your-number"
-          target="_blank"
-          class="whatsapp-button"
-          aria-label="Contact us on WhatsApp"
-        >
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-            alt="WhatsApp"
-          />
-        </a>
-        
-      </div>
   </div>
   {% endblock 'main' %}

@@ -250,10 +250,6 @@
     <p>Get the latest from Ten Brain Research by subscribing now.</p>
     <form class="subscription-form mb-5" method="post" action="/submit_subscription">
         {% csrf_token %}
-        {% if success_msg %}
-                      <div id="alerts" class="alert alert-success" role="alert">{{success_msg}}
-                      </div>
-                  {% endif %}
         <input type="email" name="uemail" placeholder="Email" required  />
         <input type="hidden" name="page_url" value="how_it_works">
         <button type="submit">Subscribe</button>

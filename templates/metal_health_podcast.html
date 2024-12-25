@@ -570,10 +570,6 @@
     <p>Get the latest from Ten Brain Research by subscribing now.</p>
     <form class="subscription-form" method="post" action="/submit_subscription">
         {% csrf_token %}
-        {% if success_msg %}
-                      <div id="alerts" class="alert alert-success" role="alert">{{success_msg}}
-                      </div>
-                  {% endif %}
         <input type="email" name="uemail" placeholder="Email" required  />
         <input type="hidden" name="page_url" value="metal_health_podcast">
         <button type="submit">Subscribe</button>

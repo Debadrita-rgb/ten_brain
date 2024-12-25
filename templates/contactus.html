@@ -52,7 +52,7 @@
                     <div id="alerts" class="alert alert-success" role="alert">{{success_msg}}
                     </div>
                 {% endif %}
-                <form action="/contactus" method="post">
+                <form action="/contactus" method="post" autocomplete="off">
                     {% csrf_token %}
                     <div class="mb-3">
                         <label for="exampleInputName" class="form-label">Your Name</label>

@@ -940,7 +940,7 @@
                           <div id="alerts" class="alert alert-success" role="alert">{{success_msg}}
                           </div>
                       {% endif %}  
-                      <form method="post" action="/ten_brain_exg_synapse">
+                      <form method="post" action="/ten_brain_exg_synapse" autocomplete="off">
                         {% csrf_token %}
                         <div class="form-group">
                           <label for="exampleInputEmail1" class="label-text">Your Name</label>
